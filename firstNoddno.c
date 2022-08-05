@@ -1,21 +1,20 @@
 #include<stdio.h>
-int fact(int);
+void oddno(int);
 int main()
 {
     int no,result;
-    printf("enter number ");
+    printf("enter no ");
     scanf("%d",&no);
-    result=fact(no);
-    printf("factorial is %d",result);
+    oddno(no);
     getch();
     return 0;
 }
-int fact(int no)
+void oddno(int no)
 {
     int s=1;
     for(int i=1;i<=no;i++)
     {
-        s=s*i;
+        printf("%d",s);
+        s=s+2;
     }
-    return s;
 }

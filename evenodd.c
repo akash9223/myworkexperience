@@ -1,13 +1,24 @@
 #include<stdio.h>
+int evenodd(int);
 int main()
 {
-    int no;
-    printf("enter number: ");
+    int no,result;
+    printf("enter number ");
     scanf("%d",&no);
-    if(no%2==0)
-        printf("even number ");
+    result=evenodd(no);
+    if(result==1)
+        printf("even");
     else
-        printf("odd number ");
+    {
+        printf("odd");
+    }
     getch();
     return 0;
+}
+int evenodd(int no)
+{
+    if(no%2==0)
+        return 1;
+    else
+        return 0;
 }
