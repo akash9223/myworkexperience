@@ -1,32 +1,25 @@
 #include<stdio.h>
+int hcf(int ,int);
 int main()
 {
-    int a,b,l,c,m,i;
+    int a,b,result;
     printf("enter two number ");
     scanf("%d%d",&a,&b);
-    if(a>b)
+    result=hcf(a,b);
+    printf("hcf is %d",result);
+    getch();
+    return 0;
+}
+int hcf(int a,int b)
+{
+    int n;
+    int s;
+    s=a;
+    for( int i=1;i<=a;a--)
     {
-        l=a;
-        c=b;
+        n=s%a;
+        if(n==0&b%a==0)
+            break;
     }
-    if(b>a)
-    {
-        l=b;
-        c=a;
-    }
-    i=c;
-    for(c;c>=1;c--)
-       {
-       if(l%c==0&&i%c==0)
-       {
-           printf("hcf is %d",c);
-           break;
-       }
-
-       }
-       getch();
-       return 0;
-
-
-
+    return a;
 }

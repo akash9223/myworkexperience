@@ -1,34 +1,43 @@
 #include<stdio.h>
+void pime(int);
 int main()
 {
-    int a,b,c,l,s;
-    printf("enter two no ");
+    int a,b;
+    printf("enter two number ");
     scanf("%d%d",&a,&b);
+    prime(a,b);
+    getch();
+    return 0;
+}
+void prime(int a,int b)
+{
+    int s,n,y;
     if(a<b)
     {
-        c=a;
-        l=b;
+        s=a;
+        n=b;
     }
     if(b<a)
     {
-        c=b;
-        l=a;
+        s=b;
+        n=a;
     }
-    c=c+1;
-    while(c<l)
+    if(s==1)
     {
-        for(int i=2;i<=c-1;i++)
-            {
-                s=c%i;
-                if(s==0)
-                    break;
-            }
-            if(s!=0||c==2||c==3)
-            {
-                printf("%d ",c);
-            }
-            c++;
+        printf(" 2 ");
     }
-    getch();
-    return 0;
+    s=s+1;
+    for( s;s<=n;s++)
+    {
+        for(int i=2;i<=s-1;i++)
+        {
+            y=s%i;
+            if(y==0)
+                break;
+        }
+        if(y!=0)
+        {
+            printf(" %d ",s);
+        }
+    }
 }
