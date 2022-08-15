@@ -1,19 +1,22 @@
 #include<stdio.h>
-void reverse(int);
+int squire(int);
 int main()
 {
-    int no;
+    int no,result;
     printf("enter number ");
     scanf("%d",&no);
-    no=no*2-1;
-    reverse(no);
-    getch();
-    return 0;
+    result=squire(no);
+   printf("sum of squire of  n netural no is %d",result);
+   getch();
+   return 0;
 }
-void reverse(int no)
+int squire(int no)
 {
-    printf("%d",no);
+    int s;
     if(no<=1)
-        return ;
-    reverse(no-2);
+        return no;
+    s=no*no+squire(no-1);
+    return s;
 }
+
+

@@ -1,19 +1,20 @@
 #include<stdio.h>
-void even(int);
+int digitsum(int);
 int main()
 {
-    int no;
-    printf("enter no ");
+    int no,result;
+    printf("enter number ");
     scanf("%d",&no);
-    no=no*2;
-    even(no);
+    result=digitsum(no);
+    printf("sum of digit is %d",result);
+    getch();
+    return 0;
 }
-void even(int no)
+int digitsum(int no)
 {
-    if(no<2)
-    {
-        return;
-    }
-    even(no-2);
-    printf("%d",no);
+    int s;
+    if(no<10)
+        return no;
+    s=no%10+digitsum(no/10);
+    return s;
 }

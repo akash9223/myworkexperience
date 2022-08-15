@@ -1,17 +1,19 @@
 #include<stdio.h>
+int sum(int);
 int main()
 {
-   void print(int);
-   int no;
-   printf("enter number ");
-   scanf("%d",&no);
-   print(no);
-   getch();
+    int no,result;
+    printf("enter number ");
+    scanf("%d",&no);
+    result=sum(no);
+    printf("sum is %d",result);
+    getch();
 }
-void print(int no)
+int sum(int no)
 {
-    if(no==0)
-        return ;
-    print(no-1);
-    printf("%d",no);
+    int s;
+    if(no<=1)
+        return no;
+    s=no+sum(no-1);
+    return s;
 }

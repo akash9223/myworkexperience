@@ -1,18 +1,21 @@
 #include<stdio.h>
-void reverse(int);
+int  evensum(int no);
 int main()
 {
-    int no;
+    int no,result;
     printf("enter number ");
     scanf("%d",&no);
-    reverse(no);
+    no=no*2;
+    result=evensum(no);
+    printf("sum of even no is %d",result);
     getch();
     return 0;
 }
-void reverse(int no)
+int evensum(int no)
 {
-    printf("%d",no);
-    if(no<=1)
-        return ;
-    reverse(no-1);
+    int s;
+    if(no<=2)
+        return no;
+    s=no+evensum(no-2);
+    return s;
 }

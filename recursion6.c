@@ -1,17 +1,20 @@
 #include<stdio.h>
-void reverse(int);
+int fact(int);
 int main()
 {
-    int no;
+    int no,result;
     printf("enter number ");
     scanf("%d",&no);
-    no=no*2;
-    reverse(no);
+    result=fact(no);
+    printf("factorial is %d",result);
+    getch();
+    return 0;
 }
-void reverse(int no)
+int fact(int no)
 {
-    printf(" %d ",no);
-    if(no<=2)
-        return;
-    reverse(no-2);
+    int s;
+    if(no<=1)
+        return no;
+    s=no*fact(no-1);
+    return s;
 }

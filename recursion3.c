@@ -1,21 +1,21 @@
 #include<stdio.h>
-void odd(int);
+int oddsum(int);
 int main()
 {
-    int no;
-    printf("enter no ");
+    int no,s;
+    printf("enter n number ");
     scanf("%d",&no);
     no=no*2-1;
-    odd(no);
+    s=oddsum(no);
+    printf(" sum of number %d",s);
     getch();
     return 0;
 }
-void odd(int no)
+int oddsum(int no)
 {
-    if(no<1)
-    {
-        return  ;
-    }
-    odd(no-2);
-    printf("%d",no);
+    int a;
+    if(no<=1)
+        return no;
+    a=no+oddsum(no-2);
+    return a;
 }
