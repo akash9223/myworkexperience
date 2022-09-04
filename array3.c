@@ -1,20 +1,36 @@
 #include<stdio.h>
+void sortarray(int[],int);
 int main()
 {
-    int num[10],esum=0,osum=0;
-    printf("enter 10 number ");
-    for(int i=0;i<=9;i++)
+   int n;
+   printf("enter size of array ");
+   scanf("%d",&n);
+   int  a[n];
+   sortarray(a,n);
+   getch();
+   return 0;
+}
+void sortarray(int b[],int size)
+{
+    int temp;
+    for(int i=0;i<size;i++)
     {
-        scanf("%d",&num[i]);
-        if(num[i]%2==0)
+        scanf("%d",&b[i]);
+    }
+    for(int i=0;i<size-1;i++)
+    {
+        for(int j=i+1;j<size;j++)
         {
-            esum=esum+num[i];
-        }
-        if(num[i]%2!=0)
-        {
-            osum=osum+num[i];
+            if(b[i]>b[j])
+            {
+                temp=b[j];
+                b[j]=b[i];
+                b[i]=temp;
+            }
         }
     }
-    printf("sum of even number is %d",esum);
-    printf("\nsum of odd number is %d",osum);
+    for(int i=0;i<size;i++)
+    {
+        printf(" %d ",b[i]);
+    }
 }

@@ -1,15 +1,28 @@
 #include<stdio.h>
+#include<conio.h>
+int smaller(int[],int);
 int main()
 {
-    int num[10],sum,avg;
-    printf("enter 10 number ");
-    for(int i=0;i<=9;i++)
+    int n,result;
+    int a[n];
+    printf("enter N number ");
+    scanf("%d",&n);
+    result=smaller(a,n);
+    printf("smaller number is %d",result);
+    getch();
+}
+int smaller(int b[],int n)
+{
+    int s;
+    for(int i=0;i<n;i++)
     {
-        scanf("%d",&num[i]);
-        sum=sum+num[i];
+        scanf("%d",&b[i]);
     }
-    avg=sum/10;
-    printf("average of 10 number %d ",avg);
-
-
+    s=b[0];
+    for(int i=0;i<n;i++)
+    {
+        if(b[i]<=s)
+            s=b[i];
+    }
+    return s;
 }

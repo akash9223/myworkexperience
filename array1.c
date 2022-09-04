@@ -1,18 +1,31 @@
 #include<stdio.h>
+#include<conio.h>
+int greater(int [],int);
 int main()
 {
-    int num[10],sum;
-    printf("enter 10  number ");
-    for(int i=0;i<=9;i++)
-    {
-        scanf("%d",&num[i]);
-        sum=sum+num[i];
-    }
-    printf("sum is %d",sum);
-    for(int i=0;i<=9;i++)
-    {
-        printf("\n%d",num[9-i]);
-    }
+     int N,result;
+     printf("enter size of array ");
+     scanf("%d",&N);
+     int a[N];
+    result=greater(a,N);
+    printf("greater number is %d ",result);
     getch();
-    return 0;
+}
+
+int greater (int b[],int size)
+{
+    int s;
+    for(int i=0;i<size;i++)
+    {
+        scanf("%d",&b[i]);
+    }
+   s=b[0];
+
+    for(int i=1;i<size;i++)
+    {
+        if(b[i]>=s)
+            s=b[i];
+    }
+    return s;
+
 }
