@@ -1,20 +1,24 @@
 #include<stdio.h>
 int main()
 {
-    int n;
-    printf("\\ enter the number of element you want to enter //");
-    scanf("%d",&n);
-    int a1[n];
-    int a2[n];
-    printf("enter your  number ");
-    for(int i=0;i<=n;i++)
+    int a[10],count=1;
+    printf("enter 10 number : ");
+    for(int i=0;i<=9;i++)
     {
-        scanf("%d",&a1[i]);
-        a2[i]=a1[i];
-
+        scanf("%d",&a[i]);
     }
-    for(int i=0;i<=n;i++)
+    for(int i=0;i<=8;i++)
     {
-        printf(" %d ",a2[i]);
+        count=1;
+        for(int j=i+1;j<=7;j++)
+        {
+            if(a[i]==a[j])
+            {
+                count++;
+            }
+        }
+
+        printf(" %d ",a[i]);
+        printf("%d time\n",count);
     }
 }

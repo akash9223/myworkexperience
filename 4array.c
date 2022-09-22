@@ -1,32 +1,26 @@
 #include<stdio.h>
-void rotatearray(int[],int);
 int main()
 {
-    int a[10];
-    rotatearray(a,10);
-    getch();
-     return 0;
+int firstoccurence(int [],int);
+int n,result;
+printf("enter the value of array : ");
+scanf("%d",&n);
+int a[n];
+result=firstoccurence(a,n);
+printf("\n%d",result);
+return 0;
 }
-void rotatearray(int b[],int size)
+int firstoccurence(int b[],int size)
 {
-    int temp,d;
-    printf("enter 10 number ");
-    for(int i=0;i<size;i++)
+    for(int i=0;i<=size;i++)
     {
         scanf("%d",&b[i]);
     }
-    printf("enter how many number you want to rotate ");
-    scanf("%d",&d);
-    for(int j=1;j<=d;j++)
+    for(int i=0;i<size;i++)
     {
-        for(int i=0;i<9;i++)
+        if(b[i]==b[i+1])
         {
-            temp=b[0];
-            b[i]=b[i+1];
+            return b[i];
         }
-    }
-    for(int i=0;i<=9;i++)
-    {
-        printf(" %d ",b[i]);
     }
 }
