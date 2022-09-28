@@ -1,21 +1,20 @@
 #include<stdio.h>
 int main()
 {
-    int a[3][3];
-    printf("enter 3*3 matrix: ");
-    for(int i=0;i<=2;i++)
+    char A[10]={'a','e','i','o','u'};
+    char B[10];
+    int count=0;
+    printf("enter string ");
+    gets(B);
+    for(int i=0;A[i];i++)
     {
-        for(int j=0;j<=2;j++)
+        for(int j=0;B[j];j++)
         {
-            scanf("%d",&a[i][j]);
+            if(A[i]==B[j])
+            {
+                count++;
+            }
         }
     }
-    printf("Transpose of  matrix is: ");
-    for(int i=0;i<=2;i++)
-    {
-        for(int j=0;j<=2;j++)
-        {
-            printf(" %d ",a[j][i]);
-        }
-    }
+    printf("%d",count);
 }
